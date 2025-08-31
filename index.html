@@ -1,0 +1,1247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Tools Suite - 6 AI Tools Lifetime Deal</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="icon" type="image/png" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMiAzMiI+CiAgPGRlZnM+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImZhdmljb25HcmFkaWVudCIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMTAwJSI+CiAgICAgIDxzdG9wIG9mZnNldD0iMCUiIHN0eWxlPSJzdG9wLWNvbG9yOiM4QjVDRjY7c3RvcC1vcGFjaXR5OjEiIC8+CiAgICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3R5bGU9InN0b3AtY29sb3I6IzA2QjZENDtzdG9wLW9wYWNpdHk6MSIgLz4KICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgPC9kZWZzPgogIAogIDwhLS0gQmFja2dyb3VuZCB3aXRoIHJvdW5kZWQgY29ybmVycyAtLT4KICA8cmVjdCB4PSIyIiB5PSIyIiB3aWR0aD0iMjgiIGhlaWdodD0iMjgiIHJ4PSI2IiBmaWxsPSJ1cmwoI2Zhdmljb25HcmFkaWVudCkiLz4KICAKICA8IS0tIEdsb2JlIG91dGxpbmUgLS0+CiAgPGcgZmlsbD0ibm9uZSIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCI+CiAgICA8IS0tIE1haW4gY2lyY2xlIC0tPgogICAgPGNpcmNsZSBjeD0iMTYiIGN5PSIxNiIgcj0iMTAiLz4KICAgIDwhLS0gRXF1YXRvciAtLT4KICAgIDxwYXRoIGQ9Ik02IDE2aDIwIi8+CiAgICA8IS0tIE1lcmlkaWFucyAtLT4KICAgIDxwYXRoIGQ9Ik0xNiA2YTEwIDEwIDAgMCAxIDAgMjAiLz4KICAgIDxwYXRoIGQ9Ik0xNiA2YTEwIDEwIDAgMCAwIDAgMjAiLz4KICAgIDwhLS0gUGFyYWxsZWxzIC0tPgogICAgPHBhdGggZD0iTTggMTBhOCA4IDAgMCAxIDE2IDAiLz4KICAgIDxwYXRoIGQ9Ik04IDIyYTggOCAwIDAgMSAxNiAwIi8+CiAgPC9nPgogIAogIDwhLS0gTGlnaHRuaW5nIGJvbHQgLS0+CiAgPHBhdGggZD0iTTEyIDhsLTIgNmg0bC0yIDggOC0xMGgtNGwyLTQiIGZpbGw9IndoaXRlIi8+Cjwvc3ZnPgo=">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#eff6ff',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                            900: '#1e3a8a'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .gradient-bg {
+            background: linear-gradient(180deg, #E6F0FF 0%, #F8FAFD 100%);
+        }
+        
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            backdrop-filter: blur(5px);
+        }
+        
+        .modal-content {
+            animation: modalSlideIn 0.3s ease-out;
+        }
+        
+        @keyframes modalSlideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-50px) scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+        
+        .tool-icon {
+            width: 64px;
+            height: 64px;
+            background: linear-gradient(135deg, #E3F2FD 0%, #BBDEFB 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.15);
+        }
+        
+        /* Performance optimizations to prevent jitter */
+        * {
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        /* Prevent layout shifts */
+        .progress-container {
+            contain: layout style paint;
+        }
+        
+        /* Optimize animations */
+        .animate-pulse {
+            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        
+        /* Reduce motion for users who prefer it */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+        
+        /* Hardware acceleration for smooth animations */
+        .transform, .transition-all {
+            will-change: transform;
+            backface-visibility: hidden;
+        }
+        
+        /* Prevent scroll jitter */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* Optimize hover effects */
+        .hover\:scale-105:hover {
+            transform: scale(1.05);
+            transition: transform 0.2s cubic-bezier(0.4, 0, 0.6, 1);
+        }
+    </style>
+</head>
+<body class="gradient-bg min-h-screen">
+    <!-- Header -->
+    <header class="bg-white shadow-sm border-b border-gray-100">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <!-- Logo -->
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 bg-gradient-to-br from-purple-500 to-cyan-400 rounded-xl flex items-center justify-center shadow-lg">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <!-- Globe outline -->
+                            <circle cx="12" cy="12" r="8" stroke-width="1.5" stroke-linecap="round"/>
+                            <path d="M4 12h16" stroke-width="1.5" stroke-linecap="round"/>
+                            <path d="M12 4a8 8 0 0 1 0 16" stroke-width="1.5" stroke-linecap="round"/>
+                            <path d="M12 4a8 8 0 0 0 0 16" stroke-width="1.5" stroke-linecap="round"/>
+                            <!-- Lightning bolt -->
+                            <path d="M10 6l-1.5 4.5h3l-1.5 6 6-7.5h-3l1.5-3z" fill="currentColor"/>
+                        </svg>
+                    </div>
+                    <span class="text-2xl font-bold text-primary-900">AI Tools Suite</span>
+                </div>
+                
+                <!-- Navigation -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#features" class="text-primary-900 hover:text-primary-600 transition-colors font-medium">Features</a>
+                    <a href="#pricing" class="text-primary-900 hover:text-primary-600 transition-colors font-medium">Pricing</a>
+                    <a href="#contact" class="text-primary-900 hover:text-primary-600 transition-colors font-medium">Contact</a>
+                </nav>
+                
+                <!-- CTA Button -->
+                <button onclick="openPayPalModal()" class="bg-primary-600 hover:bg-primary-700 text-white px-6 py-2 rounded-full font-semibold transition-colors">
+                    Get Liftee
+                </button>
+                
+                <!-- Mobile Menu Button -->
+                <button onclick="toggleMobileMenu()" class="md:hidden text-primary-900 hover:text-primary-600 transition-colors">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+            </div>
+            
+            <!-- Mobile Navigation Menu -->
+            <div id="mobileMenu" class="md:hidden hidden bg-white border-t border-gray-100 py-4">
+                <nav class="flex flex-col space-y-4 px-4">
+                    <a href="#features" class="text-primary-900 hover:text-primary-600 transition-colors font-medium py-2">Features</a>
+                    <a href="#pricing" class="text-primary-900 hover:text-primary-600 transition-colors font-medium py-2">Pricing</a>
+                    <a href="#contact" class="text-primary-900 hover:text-primary-600 transition-colors font-medium py-2">Contact</a>
+                    <button onclick="openPayPalModal()" class="bg-primary-600 hover:bg-primary-700 text-white px-6 py-2 rounded-full font-semibold transition-colors text-left">
+                        Get Liftee
+                    </button>
+                </nav>
+            </div>
+            </div>
+        </div>
+    </header>
+
+        <!-- Hero Section -->
+    <main class="container mx-auto px-4 py-12">
+        <div class="text-center mb-16">
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-primary-900 mb-4">
+                6 AI Tools. One Night. Lifetime Access.
+            </h1>
+            <p class="text-xl text-gray-600 mb-8">
+                Built for creators, freelancers, and hustlers.
+            </p>
+            <div class="text-6xl font-bold text-gray-700 mb-8" id="countdown">
+                00:12:00
+            </div>
+            <!-- Tiered Pricing Section -->
+            <div class="w-full max-w-4xl mx-auto mb-8">
+                <div class="text-center mb-6">
+                    <h2 class="text-2xl font-bold text-primary-900 mb-2">Choose Your Plan</h2>
+                    <p class="text-gray-600">Limited time pricing - increases after each tier sells out!</p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <!-- Early Bird Tier -->
+                    <div class="bg-white rounded-2xl p-6 shadow-lg border-2 border-green-200 relative overflow-hidden">
+                        <div class="absolute top-0 right-0 bg-green-500 text-white px-3 py-1 text-xs font-bold rounded-bl-lg">
+                            SOLD OUT
+                        </div>
+                        <div class="text-center">
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">Early Bird</h3>
+                            <div class="text-3xl font-bold text-green-600 mb-1">$19</div>
+                            <div class="text-sm text-gray-500 line-through mb-4">$150 value</div>
+                            <div class="text-sm text-gray-600 mb-4">First 50 people</div>
+                            <button disabled class="w-full bg-gray-300 text-gray-500 py-3 px-6 rounded-lg font-semibold cursor-not-allowed">
+                                Sold Out
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Flash Sale Tier -->
+                    <div class="bg-white rounded-2xl p-6 shadow-lg border-2 border-orange-300 relative overflow-hidden transform scale-105">
+                        <div class="absolute top-0 right-0 bg-orange-500 text-white px-3 py-1 text-xs font-bold rounded-bl-lg">
+                            ACTIVE NOW
+                        </div>
+                        <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-orange-400 to-red-500"></div>
+                        <div class="text-center">
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">Flash Sale</h3>
+                            <div class="text-3xl font-bold text-orange-600 mb-1">$29</div>
+                            <div class="text-sm text-gray-500 line-through mb-4">$150 value</div>
+                            <div class="text-sm text-gray-600 mb-4">Next 50 people</div>
+                            <div class="text-xs text-orange-600 font-semibold mb-4">🔥 50 spots left - Be first!</div>
+                            <button onclick="openPayPalModal()" class="w-full bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white py-3 px-6 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg">
+                                Get Flash Deal
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Regular Tier -->
+                    <div class="bg-white rounded-2xl p-6 shadow-lg border-2 border-gray-200 relative">
+                        <div class="absolute top-0 right-0 bg-gray-500 text-white px-3 py-1 text-xs font-bold rounded-bl-lg">
+                            COMING SOON
+                        </div>
+                        <div class="text-center">
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">Regular</h3>
+                            <div class="text-3xl font-bold text-gray-600 mb-1">$49</div>
+                            <div class="text-sm text-gray-500 line-through mb-4">$150 value</div>
+                            <div class="text-sm text-gray-600 mb-4">After 50 people</div>
+                            <button disabled class="w-full bg-gray-300 text-gray-500 py-3 px-6 rounded-lg font-semibold cursor-not-allowed">
+                                Coming Soon
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Savings Badge -->
+                <div class="text-center mt-6">
+                    <div class="inline-block bg-green-100 text-green-700 px-4 py-2 rounded-full text-sm font-semibold">
+                        💰 Save $600+ annually compared to monthly subscriptions
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Progress Bar Section -->
+            <div class="w-full max-w-md mx-auto mb-8 progress-container">
+                <div class="text-center mb-4">
+                    <h3 class="text-lg font-semibold text-primary-900 mb-2">Flash Sale Progress</h3>
+                    <div class="flex justify-between items-center text-sm text-gray-600">
+                        <span>Raised: <span id="raisedAmount" class="font-bold text-primary-600">$0</span></span>
+                        <span>Target: <span class="font-bold text-gray-800">$1,450</span></span>
+                    </div>
+                </div>
+                
+                <!-- Cylindrical Progress Bar -->
+                <div class="relative">
+                    <div class="w-full h-8 bg-gray-200 rounded-full overflow-hidden shadow-inner">
+                        <div id="progressFill" class="h-full bg-gradient-to-r from-orange-500 via-orange-600 to-red-600 rounded-full transition-all duration-1000 ease-out relative overflow-hidden" style="width: 43%;">
+                            <!-- Shine effect -->
+                            <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-transparent via-white to-transparent opacity-20 animate-pulse"></div>
+                        </div>
+                    </div>
+                    
+                    <!-- Progress percentage -->
+                    <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                        <span id="progressPercentage" class="text-xs font-bold text-white drop-shadow-lg">43%</span>
+                    </div>
+                </div>
+                
+                <!-- Progress details -->
+                <div class="mt-3 text-center">
+                    <p class="text-sm text-gray-600">
+                        <span id="peopleCount" class="font-semibold text-primary-600">0</span> people have joined • 
+                        <span id="remainingSpots" class="font-semibold text-orange-600">50</span> spots left at $29
+                    </p>
+                    <p class="text-xs text-orange-600 font-semibold mt-1">⚡ Be the first to join! Price increases to $49 after 50 people!</p>
+                </div>
+            </div>
+            
+            <!-- Social Sharing Buttons -->
+            <div class="flex justify-center items-center space-x-4">
+                <span class="text-gray-600 text-sm font-medium">Share this deal:</span>
+                <div class="flex space-x-3">
+                    <button onclick="shareOnTwitter()" class="w-10 h-10 bg-blue-500 hover:bg-blue-600 text-white rounded-full flex items-center justify-center transition-all duration-300 transform hover:scale-110 shadow-md hover:shadow-lg">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                        </svg>
+                    </button>
+                    <button onclick="shareOnFacebook()" class="w-10 h-10 bg-blue-600 hover:bg-blue-700 text-white rounded-full flex items-center justify-center transition-all duration-300 transform hover:scale-110 shadow-md hover:shadow-lg">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                        </svg>
+                    </button>
+                    <button onclick="shareOnLinkedIn()" class="w-10 h-10 bg-blue-700 hover:bg-blue-800 text-white rounded-full flex items-center justify-center transition-all duration-300 transform hover:scale-110 shadow-md hover:shadow-lg">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                        </svg>
+                    </button>
+                    <button onclick="shareOnProductHunt()" class="w-10 h-10 bg-orange-500 hover:bg-orange-600 text-white rounded-full flex items-center justify-center transition-all duration-300 transform hover:scale-110 shadow-md hover:shadow-lg">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M13.604 8.4h-3.405V12h3.405c1.65 0 3.045-1.395 3.045-3.05 0-2.34-1.395-3.15-3.045-3.15zM13.604 14.25h-3.405V18h-2.655V6h6.06c2.25 0 4.5 1.5 4.5 4.05 0 2.25-1.8 4.2-4.5 4.2z"/>
+                        </svg>
+                    </button>
+                    <button onclick="shareOnIndieHackers()" class="w-10 h-10 bg-purple-600 hover:bg-purple-700 text-white rounded-full flex items-center justify-center transition-all duration-300 transform hover:scale-110 shadow-md hover:shadow-lg">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                        </svg>
+                    </button>
+                    <button onclick="copyLink()" class="w-10 h-10 bg-gray-500 hover:bg-gray-600 text-white rounded-full flex items-center justify-center transition-all duration-300 transform hover:scale-110 shadow-md hover:shadow-lg">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Feature Cards Grid -->
+        <div id="features" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto mb-16">
+            
+            <!-- Card 1: AI Domain Checker -->
+            <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 border border-gray-100 cursor-pointer" onclick="openToolModal('AI Domain Checker')">
+                <div class="flex justify-center mb-6">
+                    <div class="tool-icon">
+                        <svg class="w-8 h-8 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <circle cx="12" cy="12" r="8" stroke-width="1.5"/>
+                            <path d="M2 12h20" stroke-width="1.5"/>
+                            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" stroke-width="1.5"/>
+                            <circle cx="17" cy="17" r="3" stroke-width="1.5"/>
+                            <path d="M20 20l-2-2" stroke-width="1.5" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                </div>
+                <h3 class="text-xl font-bold text-primary-900 mb-3 text-center">
+                    AI Domain Checker
+                </h3>
+                <p class="text-gray-600 text-center mb-6">
+                    Find available domain names
+                </p>
+                <button class="w-full bg-white hover:bg-gray-50 text-primary-600 font-semibold py-3 px-6 rounded-lg transition-all duration-300 border border-gray-200 hover:border-primary-300">
+                    Coming Soon
+                </button>
+            </div>
+
+            <!-- Card 2: Gmail Cleaner -->
+            <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 border border-gray-100 cursor-pointer" onclick="openToolModal('Gmail Cleaner')">
+                <div class="flex justify-center mb-6">
+                    <div class="tool-icon">
+                        <svg class="w-8 h-8 text-primary-600" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M4 6h16c1.1 0 2 .9 2 2v10c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V8c0-1.1.9-2 2-2z"/>
+                            <path d="M22 8l-10 6L2 8" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M18 8l1.5-2.5L22 6l-1.5 2.5L22 11l-2.5-1.5L18 8z" fill="#F59E0B"/>
+                        </svg>
+                    </div>
+                </div>
+                <h3 class="text-xl font-bold text-primary-900 mb-3 text-center">
+                    Gmail Cleaner
+                </h3>
+                <p class="text-gray-600 text-center mb-6">
+                    Organize your inbox
+                </p>
+                <button class="w-full bg-white hover:bg-gray-50 text-primary-600 font-semibold py-3 px-6 rounded-lg transition-all duration-300 border border-gray-200 hover:border-primary-300">
+                    Coming Soon
+                </button>
+            </div>
+            
+            <!-- Card 3: PDF Converter -->
+            <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 border border-gray-100 cursor-pointer" onclick="openToolModal('PDF Converter')">
+                <div class="flex justify-center mb-6">
+                    <div class="tool-icon">
+                        <svg class="w-8 h-8 text-primary-600" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6z"/>
+                            <path d="M18 2l-4 4h4V2z" fill="#1E40AF"/>
+                            <path d="M16 18h-8" fill="none" stroke="#1E40AF" stroke-width="1.5"/>
+                            <path d="M16 15h-8" fill="none" stroke="#1E40AF" stroke-width="1.5"/>
+                        </svg>
+                    </div>
+                </div>
+                <h3 class="text-xl font-bold text-primary-900 mb-3 text-center">
+                    PDF Converter
+                </h3>
+                <p class="text-gray-600 text-center mb-6">
+                    Convert files to PDF
+                </p>
+                <button class="w-full bg-white hover:bg-gray-50 text-primary-600 font-semibold py-3 px-6 rounded-lg transition-all duration-300 border border-gray-200 hover:border-primary-300">
+                    Coming Soon
+                </button>
+            </div>
+            
+            <!-- Card 4: Instagram Tool -->
+            <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 border border-gray-100 cursor-pointer" onclick="openToolModal('Instagram Tool')">
+                <div class="flex justify-center mb-6">
+                    <div class="tool-icon">
+                        <svg class="w-8 h-8 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <circle cx="12" cy="12" r="10" stroke-width="1.5"/>
+                            <rect x="8" y="8" width="8" height="8" stroke-width="1.5" rx="1"/>
+                            <circle cx="12" cy="12" r="2" stroke-width="1.5"/>
+                            <circle cx="15" cy="9" r="1.5" fill="currentColor"/>
+                        </svg>
+                    </div>
+                </div>
+                <h3 class="text-xl font-bold text-primary-900 mb-3 text-center">
+                    Instagram Tool
+                </h3>
+                <p class="text-gray-600 text-center mb-6">
+                    Boost your engagement
+                </p>
+                <button class="w-full bg-white hover:bg-gray-50 text-primary-600 font-semibold py-3 px-6 rounded-lg transition-all duration-300 border border-gray-200 hover:border-primary-300">
+                    Coming Soon
+                </button>
+            </div>
+            
+            <!-- Card 5: Baby Budget Lite -->
+            <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 border border-gray-100 cursor-pointer" onclick="openToolModal('Baby Budget Lite')">
+                <div class="flex justify-center mb-6">
+                    <div class="tool-icon">
+                        <svg class="w-8 h-8 text-primary-600" fill="currentColor" viewBox="0 0 24 24">
+                            <rect x="4" y="4" width="16" height="16" rx="2"/>
+                            <rect x="6" y="6" width="12" height="4" rx="1" fill="#4C1D95"/>
+                            <rect x="6" y="12" width="2" height="2" fill="white"/>
+                            <rect x="10" y="12" width="2" height="2" fill="white"/>
+                            <rect x="14" y="12" width="2" height="2" fill="white"/>
+                            <rect x="6" y="16" width="2" height="2" fill="white"/>
+                            <rect x="10" y="16" width="2" height="2" fill="white"/>
+                            <rect x="14" y="16" width="2" height="2" fill="white"/>
+                            <path d="M12 8v8M10 10h4M10 14h4" fill="none" stroke="#1E40AF" stroke-width="1.5" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                </div>
+                <h3 class="text-xl font-bold text-primary-900 mb-3 text-center">
+                    Baby Budget Lite
+                </h3>
+                <p class="text-gray-600 text-center mb-6">
+                    Track family finances
+                </p>
+                <button class="w-full bg-white hover:bg-gray-50 text-primary-600 font-semibold py-3 px-6 rounded-lg transition-all duration-300 border border-gray-200 hover:border-primary-300">
+                    Coming Soon
+                </button>
+            </div>
+
+            <!-- Card 6: Credit / Loan Checker -->
+            <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 border border-gray-100 cursor-pointer" onclick="openToolModal('Credit / Loan Checker')">
+                <div class="flex justify-center mb-6">
+                    <div class="tool-icon">
+                        <svg class="w-8 h-8 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2a10 10 0 0 1 0 20" stroke-width="2" stroke-linecap="round"/>
+                            <path d="M12 2a10 10 0 0 0 0 20" stroke="#E5E7EB" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
+                            <path d="M12 12l4-4" stroke-width="2" stroke-linecap="round"/>
+                            <circle cx="12" cy="12" r="2" fill="currentColor"/>
+                            <path d="M12 6v4M10 7h4M10 9h4" stroke-width="1.5" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                </div>
+                <h3 class="text-xl font-bold text-primary-900 mb-3 text-center">
+                    Credit / Loan Checker
+                </h3>
+                <p class="text-gray-600 text-center mb-6">
+                    See your credit score
+                </p>
+                <button class="w-full bg-white hover:bg-gray-50 text-primary-600 font-semibold py-3 px-6 rounded-lg transition-all duration-300 border border-gray-200 hover:border-primary-300">
+                    Coming Soon
+                </button>
+            </div>
+
+        </div>
+
+        <!-- Early Backers Section -->
+        <div class="text-center mb-16">
+            <h2 class="text-3xl font-bold text-primary-900 mb-4">Early Backers</h2>
+            <p class="text-lg text-gray-600 mb-8">Support the products and shape the future.</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+                <div class="bg-white rounded-xl p-6 shadow-md">
+                    <div class="w-12 h-12 bg-gray-300 rounded-full mx-auto mb-4"></div>
+                    <h4 class="font-semibold text-primary-900 mb-2">Jessica R.</h4>
+                    <p class="text-gray-600 text-sm">A short product testimonial here.</p>
+                </div>
+                <div class="bg-white rounded-xl p-6 shadow-md">
+                    <div class="w-12 h-12 bg-gray-300 rounded-full mx-auto mb-4"></div>
+                    <h4 class="font-semibold text-primary-900 mb-2">Mike T.</h4>
+                    <p class="text-gray-600 text-sm">A short product testimonial here.</p>
+                </div>
+                <div class="bg-white rounded-xl p-6 shadow-md">
+                    <div class="w-12 h-12 bg-gray-300 rounded-full mx-auto mb-4"></div>
+                    <h4 class="font-semibold text-primary-900 mb-2">Sarah L.</h4>
+                    <p class="text-gray-600 text-sm">A short product testimonial here.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Features Section -->
+        <div id="features" class="mb-16">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-primary-900 mb-4">Features</h2>
+                <p class="text-lg text-gray-600">Everything you need to boost your productivity</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <div class="bg-white rounded-xl p-6 shadow-lg">
+                    <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-primary-900 mb-3">Lightning Fast</h3>
+                    <p class="text-gray-600">All tools are optimized for speed and efficiency, saving you valuable time.</p>
+                </div>
+                
+                <div class="bg-white rounded-xl p-6 shadow-lg">
+                    <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-primary-900 mb-3">AI-Powered</h3>
+                    <p class="text-gray-600">Advanced AI algorithms ensure accurate results and intelligent automation.</p>
+                </div>
+                
+                <div class="bg-white rounded-xl p-6 shadow-lg">
+                    <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-primary-900 mb-3">Secure & Private</h3>
+                    <p class="text-gray-600">Your data is protected with enterprise-grade security and privacy measures.</p>
+                </div>
+                
+                <div class="bg-white rounded-xl p-6 shadow-lg">
+                    <div class="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-primary-900 mb-3">User-Friendly</h3>
+                    <p class="text-gray-600">Intuitive interfaces designed for both beginners and power users.</p>
+                </div>
+                
+                <div class="bg-white rounded-xl p-6 shadow-lg">
+                    <div class="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-primary-900 mb-3">24/7 Access</h3>
+                    <p class="text-gray-600">Access your tools anytime, anywhere with our reliable cloud infrastructure.</p>
+                </div>
+                
+                <div class="bg-white rounded-xl p-6 shadow-lg">
+                    <div class="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192L5.636 18.364M12 2.25a9.75 9.75 0 100 19.5 9.75 9.75 0 000-19.5z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-primary-900 mb-3">Regular Updates</h3>
+                    <p class="text-gray-600">Continuous improvements and new features added regularly at no extra cost.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pricing Section -->
+        <div id="pricing" class="mb-16">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-primary-900 mb-4">Pricing</h2>
+                <p class="text-lg text-gray-600">Simple, transparent pricing with no hidden fees</p>
+            </div>
+            
+            <div class="max-w-4xl mx-auto">
+                <div class="bg-white rounded-2xl shadow-xl p-8 border-2 border-primary-500 relative overflow-hidden">
+                    <!-- Popular Badge -->
+                    <div class="absolute top-0 right-0 bg-primary-500 text-white px-6 py-2 text-sm font-semibold transform rotate-45 translate-x-8 -translate-y-2">
+                        POPULAR
+                    </div>
+                    
+                    <div class="text-center mb-8">
+                        <h3 class="text-2xl font-bold text-primary-900 mb-2">Lifetime Access</h3>
+                        <div class="flex items-center justify-center mb-4">
+                            <span class="text-4xl font-bold text-primary-900">$19</span>
+                            <span class="text-gray-500 ml-2 line-through">$399</span>
+                        </div>
+                        <p class="text-gray-600">One-time payment, lifetime access</p>
+                    </div>
+                    
+                    <div class="space-y-4 mb-8">
+                        <div class="flex items-center">
+                            <svg class="w-5 h-5 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-gray-700">Access to all 6 AI tools</span>
+                        </div>
+                        <div class="flex items-center">
+                            <svg class="w-5 h-5 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-gray-700">Lifetime updates & new features</span>
+                        </div>
+                        <div class="flex items-center">
+                            <svg class="w-5 h-5 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-gray-700">Priority customer support</span>
+                        </div>
+                        <div class="flex items-center">
+                            <svg class="w-5 h-5 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-gray-700">No monthly fees or hidden costs</span>
+                        </div>
+                        <div class="flex items-center">
+                            <svg class="w-5 h-5 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-gray-700">30-day money-back guarantee</span>
+                        </div>
+                    </div>
+                    
+                    <button onclick="openPayPalModal()" class="w-full bg-primary-600 hover:bg-primary-700 text-white font-bold py-4 px-8 rounded-lg text-lg transition-all duration-300 transform hover:scale-105 shadow-lg">
+                        Get Lifetime Access - $19
+                    </button>
+                    
+                    <p class="text-center text-sm text-gray-500 mt-4">
+                        🔥 Limited time offer - 95% off regular price
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact Section -->
+        <div id="contact" class="mb-16">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-primary-900 mb-4">Contact Us</h2>
+                <p class="text-lg text-gray-600">Get in touch with our support team</p>
+            </div>
+            
+            <div class="max-w-4xl mx-auto">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <!-- Contact Form -->
+                    <div class="bg-white rounded-xl p-8 shadow-lg">
+                        <h3 class="text-xl font-semibold text-primary-900 mb-6">Send us a message</h3>
+                        <form class="space-y-4">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Name</label>
+                                <input type="text" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent" placeholder="Your name">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Email</label>
+                                <input type="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent" placeholder="your@email.com">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Subject</label>
+                                <select class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent">
+                                    <option>General Inquiry</option>
+                                    <option>Technical Support</option>
+                                    <option>Billing Question</option>
+                                    <option>Feature Request</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Message</label>
+                                <textarea rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent" placeholder="Your message..."></textarea>
+                            </div>
+                            <button type="submit" class="w-full bg-primary-600 hover:bg-primary-700 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300">
+                                Send Message
+                            </button>
+                        </form>
+                    </div>
+                    
+                    <!-- Contact Info -->
+                    <div class="bg-white rounded-xl p-8 shadow-lg">
+                        <h3 class="text-xl font-semibold text-primary-900 mb-6">Get in touch</h3>
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div class="w-10 h-10 bg-primary-100 rounded-lg flex items-center justify-center mr-4">
+                                    <svg class="w-5 h-5 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-900">Email</h4>
+                                    <p class="text-gray-600">support@aitoolssuite.com</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center mr-4">
+                                    <svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-900">Response Time</h4>
+                                    <p class="text-gray-600">Within 24 hours</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center mr-4">
+                                    <svg class="w-5 h-5 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+                                    </svg>
+                                </div>
+                <div>
+                                    <h4 class="font-semibold text-gray-900">Live Chat</h4>
+                                    <p class="text-gray-600">Available during business hours</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-8 p-4 bg-gray-50 rounded-lg">
+                            <h4 class="font-semibold text-gray-900 mb-2">Business Hours</h4>
+                            <p class="text-gray-600 text-sm">Monday - Friday: 9:00 AM - 6:00 PM EST</p>
+                            <p class="text-gray-600 text-sm">Saturday: 10:00 AM - 4:00 PM EST</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-gray-100 py-8">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <!-- PayPal Logo -->
+                <div class="mb-4 md:mb-0">
+                    <button onclick="openPayPalModal()" class="flex items-center space-x-2 text-primary-600 hover:text-primary-700 transition-colors">
+                        <svg class="w-8 h-8" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M20.067 8.478c.492.315.844.825.844 1.478 0 .653-.352 1.163-.844 1.478-.492.315-1.163.478-1.844.478H16.5v-2.956h1.723c.681 0 1.352.163 1.844.478zM7.5 12.414V9.458h1.723c.681 0 1.352.163 1.844.478.492.315.844.825.844 1.478 0 .653-.352 1.163-.844 1.478-.492.315-1.163.478-1.844.478H7.5z"/>
+                        </svg>
+                        <span class="font-semibold">PayPal Me</span>
+                    </button>
+                </div>
+                
+                <!-- Copyright -->
+                <div class="text-gray-600 text-center mb-4 md:mb-0">
+                    © 2025 AI Tools Suite. All rights reserved.
+                </div>
+                
+                <!-- Trust Badges -->
+                <div class="flex flex-col md:flex-row items-center space-y-2 md:space-y-0 md:space-x-6">
+                    <div class="flex items-center space-x-2 text-gray-600">
+                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/>
+                        </svg>
+                        <span class="text-sm">Secure payment</span>
+                    </div>
+                    <div class="flex items-center space-x-2 text-gray-600">
+                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                        </svg>
+                        <span class="text-sm">No spam</span>
+                    </div>
+                    <div class="flex items-center space-x-2 text-gray-600">
+                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/>
+                        </svg>
+                        <span class="text-sm">Cancel anytime</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Footer Social Sharing -->
+            <div class="flex justify-center mt-6 pt-6 border-t border-gray-200">
+                <div class="flex flex-col items-center space-y-3">
+                    <span class="text-gray-600 text-sm font-medium">Follow & Share:</span>
+                    <div class="flex space-x-3">
+                        <button onclick="shareOnTwitter()" class="w-9 h-9 bg-blue-500 hover:bg-blue-600 text-white rounded-full flex items-center justify-center transition-all duration-300 transform hover:scale-110 shadow-sm">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                            </svg>
+                        </button>
+                        <button onclick="shareOnFacebook()" class="w-9 h-9 bg-blue-600 hover:bg-blue-700 text-white rounded-full flex items-center justify-center transition-all duration-300 transform hover:scale-110 shadow-sm">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                            </svg>
+                        </button>
+                        <button onclick="shareOnLinkedIn()" class="w-9 h-9 bg-blue-700 hover:bg-blue-800 text-white rounded-full flex items-center justify-center transition-all duration-300 transform hover:scale-110 shadow-sm">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                            </svg>
+                        </button>
+                        <button onclick="shareOnProductHunt()" class="w-9 h-9 bg-orange-500 hover:bg-orange-600 text-white rounded-full flex items-center justify-center transition-all duration-300 transform hover:scale-110 shadow-sm">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M13.604 8.4h-3.405V12h3.405c1.65 0 3.045-1.395 3.045-3.05 0-2.34-1.395-3.15-3.045-3.15zM13.604 14.25h-3.405V18h-2.655V6h6.06c2.25 0 4.5 1.5 4.5 4.05 0 2.25-1.8 4.2-4.5 4.2z"/>
+                            </svg>
+                        </button>
+                        <button onclick="shareOnIndieHackers()" class="w-9 h-9 bg-purple-600 hover:bg-purple-700 text-white rounded-full flex items-center justify-center transition-all duration-300 transform hover:scale-110 shadow-sm">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                            </svg>
+                        </button>
+                        <button onclick="copyLink()" class="w-9 h-9 bg-gray-500 hover:bg-gray-600 text-white rounded-full flex items-center justify-center transition-all duration-300 transform hover:scale-110 shadow-sm">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Tool Modal -->
+    <div id="toolModal" class="modal">
+        <div class="flex items-center justify-center min-h-screen p-4">
+            <div class="modal-content bg-white rounded-2xl p-8 max-w-md w-full mx-4 shadow-2xl">
+                <div class="text-center">
+                    <h2 id="toolModalTitle" class="text-2xl font-bold text-primary-900 mb-2">Tool Name</h2>
+                    <p class="text-gray-600 mb-6">Get early access to this tool</p>
+                    
+                    <form id="toolForm" class="space-y-4">
+                        <input type="email" placeholder="Your Email" required 
+                               class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent">
+                        <button type="submit" 
+                                class="w-full bg-gradient-to-r from-purple-500 to-blue-500 text-white font-semibold py-3 px-6 rounded-lg hover:from-purple-600 hover:to-blue-600 transition-all duration-300">
+                            Join the Waitlist
+                        </button>
+                    </form>
+                    
+                    <div class="flex items-center justify-center mt-4 text-gray-500 text-sm">
+                        <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/>
+                        </svg>
+                        No spam. Unsubscribe anytime.
+                    </div>
+                    
+                    <button onclick="closeToolModal()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- PayPal Modal -->
+    <div id="paypalModal" class="modal">
+        <div class="flex items-center justify-center min-h-screen p-4">
+            <div class="modal-content bg-white rounded-2xl p-8 max-w-md w-full mx-4 shadow-2xl">
+                <div class="text-center">
+                    <h2 class="text-2xl font-bold text-primary-900 mb-2">6 Tools to Unlock</h2>
+                    <p class="text-gray-600 mb-6">Be the first to experience our complete AI tools suite</p>
+                    
+                    <form id="paypalForm" class="space-y-4">
+                        <input type="email" placeholder="Your Email" required 
+                               class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent">
+                        <button type="submit" 
+                                class="w-full bg-gradient-to-r from-purple-500 to-blue-500 text-white font-semibold py-3 px-6 rounded-lg hover:from-purple-600 hover:to-blue-600 transition-all duration-300">
+                            Join the Waitlist
+                        </button>
+                    </form>
+                    
+                    <div class="flex items-center justify-center mt-4 text-gray-500 text-sm">
+                        <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/>
+                        </svg>
+                        No spam. Unsubscribe anytime.
+                    </div>
+                    
+                    <button onclick="closePayPalModal()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Exit Intent Popup -->
+    <div id="exitIntentModal" class="modal">
+        <div class="flex items-center justify-center min-h-screen p-4">
+            <div class="modal-content bg-white rounded-2xl p-8 max-w-lg w-full mx-4 shadow-2xl relative">
+                <!-- Close button -->
+                <button onclick="closeExitIntentModal()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 z-10">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                    </svg>
+                </button>
+                
+                <div class="text-center">
+                    <!-- Urgency Badge -->
+                    <div class="inline-block bg-red-100 text-red-600 px-3 py-1 rounded-full text-sm font-semibold mb-4">
+                        ⚡ Limited Time Offer
+                    </div>
+                    
+                    <!-- Main Headline -->
+                    <h2 class="text-3xl font-bold text-primary-900 mb-3">
+                        Wait! Don't Miss This Deal
+                    </h2>
+                    
+                    <!-- Sub-headline -->
+                    <p class="text-lg text-gray-600 mb-6">
+                        Get 6 AI Tools for just $29 - Flash Sale Price! 81% off the regular price!
+                    </p>
+                    
+                    <!-- Countdown Timer -->
+                    <div class="bg-gradient-to-r from-red-500 to-orange-500 text-white rounded-lg p-4 mb-6">
+                        <p class="text-sm font-medium mb-2">Offer expires in:</p>
+                        <div class="text-2xl font-bold" id="exitCountdown">05:00</div>
+                    </div>
+                    
+                    <!-- Benefits List -->
+                    <div class="text-left mb-6 space-y-2">
+                        <div class="flex items-center text-gray-700">
+                            <svg class="w-5 h-5 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            Lifetime access to all 6 AI tools
+                        </div>
+                        <div class="flex items-center text-gray-700">
+                            <svg class="w-5 h-5 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            No monthly fees or hidden costs
+                        </div>
+                        <div class="flex items-center text-gray-700">
+                            <svg class="w-5 h-5 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            Instant access after purchase
+                        </div>
+                    </div>
+                    
+                    <!-- CTA Button -->
+                    <button onclick="claimExitOffer()" 
+                            class="w-full bg-gradient-to-r from-red-500 to-orange-500 hover:from-red-600 hover:to-orange-600 text-white font-bold py-4 px-8 rounded-lg text-lg transition-all duration-300 transform hover:scale-105 shadow-lg">
+                        Claim My $29 Flash Deal Now
+                    </button>
+                    
+                    <!-- Social Proof -->
+                    <p class="text-sm text-gray-500 mt-4">
+                        🚀 Be the first to claim this offer!
+                    </p>
+                    
+                    <!-- No thanks option -->
+                    <button onclick="closeExitIntentModal()" class="text-gray-400 hover:text-gray-600 text-sm mt-4 underline">
+                        No thanks, I'll pay full price later
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Countdown Timer
+        let timeInSeconds = 12 * 60; // 12 minutes
+        const countdownDisplay = document.getElementById('countdown');
+
+        function updateCountdown() {
+            const minutes = Math.floor(timeInSeconds / 60);
+            const seconds = timeInSeconds % 60;
+
+            const formattedMinutes = minutes < 10 ? '0' + minutes : minutes;
+            const formattedSeconds = seconds < 10 ? '0' + seconds : seconds;
+
+            countdownDisplay.textContent = `${formattedMinutes}:${formattedSeconds}`;
+
+            if (timeInSeconds > 0) {
+                timeInSeconds--;
+            } else {
+                clearInterval(timerInterval);
+                countdownDisplay.textContent = "Time's up!";
+            }
+        }
+
+        const timerInterval = setInterval(updateCountdown, 1000);
+        updateCountdown();
+
+        // Modal Functions
+        function openToolModal(toolName) {
+            document.getElementById('toolModalTitle').textContent = toolName;
+            document.getElementById('toolModal').style.display = 'block';
+        }
+
+        function closeToolModal() {
+            document.getElementById('toolModal').style.display = 'none';
+        }
+
+        function openPayPalModal() {
+            document.getElementById('paypalModal').style.display = 'block';
+        }
+
+        function closePayPalModal() {
+            document.getElementById('paypalModal').style.display = 'none';
+        }
+
+        // Close modals when clicking outside
+        window.onclick = function(event) {
+            const toolModal = document.getElementById('toolModal');
+            const paypalModal = document.getElementById('paypalModal');
+            
+            if (event.target === toolModal) {
+                closeToolModal();
+            }
+            if (event.target === paypalModal) {
+                closePayPalModal();
+            }
+        }
+
+        // Form submissions
+        document.getElementById('toolForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const email = e.target.querySelector('input[type="email"]').value;
+            alert(`Thank you! We'll notify you when ${document.getElementById('toolModalTitle').textContent} is available.`);
+            closeToolModal();
+        });
+
+        document.getElementById('paypalForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const email = e.target.querySelector('input[type="email"]').value;
+            alert('Thank you! We\'ll notify you when all 6 tools are available.');
+            closePayPalModal();
+        });
+
+        // Social Sharing Functions
+        function shareOnTwitter() {
+            const text = "🚀 Flash Sale! Get 6 AI Tools for just $29! Limited time offer - AI Domain Checker, Gmail Cleaner, PDF Converter & more!";
+            const url = window.location.href;
+            const twitterUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}`;
+            window.open(twitterUrl, '_blank', 'width=600,height=400');
+        }
+
+        function shareOnFacebook() {
+            const url = window.location.href;
+            const facebookUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`;
+            window.open(facebookUrl, '_blank', 'width=600,height=400');
+        }
+
+        function shareOnLinkedIn() {
+            const text = "Check out this amazing deal: 6 AI Tools for just $19!";
+            const url = window.location.href;
+            const linkedinUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}`;
+            window.open(linkedinUrl, '_blank', 'width=600,height=400');
+        }
+
+        function shareOnProductHunt() {
+            const url = window.location.href;
+            const productHuntUrl = `https://www.producthunt.com/posts?url=${encodeURIComponent(url)}`;
+            window.open(productHuntUrl, '_blank', 'width=600,height=400');
+        }
+
+        function shareOnIndieHackers() {
+            const text = "Check out this amazing AI tools suite deal!";
+            const url = window.location.href;
+            const indieHackersUrl = `https://www.indiehackers.com/post?text=${encodeURIComponent(text + ' ' + url)}`;
+            window.open(indieHackersUrl, '_blank', 'width=600,height=400');
+        }
+
+        function copyLink() {
+            const url = window.location.href;
+            navigator.clipboard.writeText(url).then(function() {
+                // Show success message
+                const button = event.target.closest('button');
+                const originalHTML = button.innerHTML;
+                button.innerHTML = `
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                    </svg>
+                `;
+                button.classList.remove('bg-gray-500', 'hover:bg-gray-600');
+                button.classList.add('bg-green-500', 'hover:bg-green-600');
+                
+                setTimeout(() => {
+                    button.innerHTML = originalHTML;
+                    button.classList.remove('bg-green-500', 'hover:bg-green-600');
+                    button.classList.add('bg-gray-500', 'hover:bg-gray-600');
+                }, 2000);
+            }).catch(function(err) {
+                console.error('Could not copy text: ', err);
+                alert('Link copied to clipboard!');
+            });
+        }
+
+        // Exit Intent Popup Functions
+        let exitIntentShown = false;
+        let exitCountdownInterval;
+
+        function showExitIntentModal() {
+            if (!exitIntentShown) {
+                document.getElementById('exitIntentModal').style.display = 'block';
+                exitIntentShown = true;
+                startExitCountdown();
+            }
+        }
+
+        function closeExitIntentModal() {
+            document.getElementById('exitIntentModal').style.display = 'none';
+        }
+
+        function claimExitOffer() {
+            // Redirect to PayPal or open payment modal
+            openPayPalModal();
+            closeExitIntentModal();
+        }
+
+        function startExitCountdown() {
+            let timeLeft = 5 * 60; // 5 minutes in seconds
+            const countdownElement = document.getElementById('exitCountdown');
+            
+            exitCountdownInterval = setInterval(() => {
+                const minutes = Math.floor(timeLeft / 60);
+                const seconds = timeLeft % 60;
+                
+                countdownElement.textContent = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+                
+                if (timeLeft <= 0) {
+                    clearInterval(exitCountdownInterval);
+                    closeExitIntentModal();
+                }
+                
+                timeLeft--;
+            }, 1000);
+        }
+
+        // Exit Intent Detection
+        document.addEventListener('mouseleave', function(e) {
+            if (e.clientY <= 0 && !exitIntentShown) {
+                // User is moving mouse to top of page (likely to close tab)
+                setTimeout(() => {
+                    showExitIntentModal();
+                }, 500); // Small delay to ensure they're actually leaving
+            }
+        });
+
+        // Alternative exit intent detection for mobile
+        document.addEventListener('touchstart', function(e) {
+            if (e.touches.length === 0 && !exitIntentShown) {
+                // User might be switching apps or leaving
+                setTimeout(() => {
+                    showExitIntentModal();
+                }, 1000);
+            }
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    // Use requestAnimationFrame for smoother scrolling
+                    requestAnimationFrame(() => {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    });
+                }
+            });
+        });
+
+        // Contact form submission
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your message! We\'ll get back to you within 24 hours.');
+            this.reset();
+        });
+
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            mobileMenu.classList.toggle('hidden');
+        }
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('#mobileMenu a').forEach(link => {
+            link.addEventListener('click', function() {
+                document.getElementById('mobileMenu').classList.add('hidden');
+            });
+        });
+
+        // Progress Bar Functionality
+        let currentRaised = 0; // Starting fresh - no sales yet
+        let targetAmount = 1450; // $29 × 50 (flash sale target)
+        let currentPeople = 0; // Starting fresh - no customers yet
+        let maxPeople = 50; // 50 spots in flash sale
+        let currentTier = 'flash'; // 'early', 'flash', 'regular'
+
+        function updateProgress() {
+            const percentage = Math.min((currentRaised / targetAmount) * 100, 100);
+            const progressFill = document.getElementById('progressFill');
+            const progressPercentage = document.getElementById('progressPercentage');
+            const raisedAmount = document.getElementById('raisedAmount');
+            const peopleCount = document.getElementById('peopleCount');
+            const remainingSpots = document.getElementById('remainingSpots');
+
+            // Update progress bar
+            progressFill.style.width = percentage + '%';
+            progressPercentage.textContent = Math.round(percentage) + '%';
+
+            // Update amounts and counts
+            raisedAmount.textContent = '$' + currentRaised.toLocaleString();
+            peopleCount.textContent = currentPeople;
+            remainingSpots.textContent = maxPeople - currentPeople;
+
+            // Color transitions based on progress and tier
+            if (currentTier === 'flash') {
+                if (percentage >= 80) {
+                    progressFill.className = 'h-full bg-gradient-to-r from-red-500 via-red-600 to-red-700 rounded-full transition-all duration-1000 ease-out relative overflow-hidden';
+                } else if (percentage >= 60) {
+                    progressFill.className = 'h-full bg-gradient-to-r from-orange-500 via-orange-600 to-red-600 rounded-full transition-all duration-1000 ease-out relative overflow-hidden';
+                } else {
+                    progressFill.className = 'h-full bg-gradient-to-r from-orange-500 via-orange-600 to-orange-700 rounded-full transition-all duration-1000 ease-out relative overflow-hidden';
+                }
+            }
+        }
+
+        // Simulate progress updates (for demo purposes)
+        function simulateProgress() {
+            // Random progress updates every 30-60 seconds
+            setInterval(() => {
+                if (Math.random() > 0.7 && currentRaised < targetAmount) { // 30% chance
+                    const increment = 29; // $29 per person in flash sale
+                    currentRaised += increment;
+                    currentPeople += 1;
+                    updateProgress();
+                    
+                    // Check if we need to move to next tier
+                    if (currentPeople >= 50 && currentTier === 'flash') {
+                        currentTier = 'regular';
+                        targetAmount = 2450; // $49 × 50 (next tier)
+                        updateProgress();
+                    }
+                    
+                    // Add a subtle animation with better performance
+                    const progressFill = document.getElementById('progressFill');
+                    if (progressFill) {
+                        progressFill.style.transform = 'scale(1.01)';
+                        setTimeout(() => {
+                            progressFill.style.transform = 'scale(1)';
+                        }, 150);
+                    }
+                }
+            }, Math.random() * 30000 + 30000); // 30-60 seconds
+        }
+
+        // Initialize progress bar
+        updateProgress();
+        simulateProgress();
+    </script>
+</body>
+</html> 
